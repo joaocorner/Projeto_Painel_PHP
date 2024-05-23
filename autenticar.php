@@ -11,10 +11,10 @@ $query->bindValue(':senha', $senha);
 $query->execute();
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $linhas = count($res);
-// echo $linhas;
 
-if($linhas > 0){
-    echo 'Logado com sucesso';
+if ($linhas > 0) {
+    echo '<script>window.location="painel"</script>';
 } else {
-    echo 'Usuário ou senha incorretos';
+    echo '<script>window.alert("Dados Incorretos")</script>';
+    echo '<script>window.location="index.php"</script>';
 }
