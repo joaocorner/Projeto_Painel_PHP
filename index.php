@@ -9,9 +9,10 @@
 <body>
     <div class='login'>
         <div class='form'>
-            <form class='registro' action="">
+            <form>
                 <input type="email" name="usuario" placeholder="Digite seu E-mail">
-                <input type="password" name="senha" placehodler="Digite sua Senha">
+                <input type="password" name="senha" placeholder="Digite sua Senha">
+                <button type="submit">Login</button>
             </form>
         </div>
     </div>
