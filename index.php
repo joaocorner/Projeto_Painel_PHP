@@ -10,7 +10,8 @@
     <div class='login'>
         <div class='form'>
             <form class='registro' action="">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi omnis aliquid ipsam consequatur saepe provident aut eaque eveniet sunt beatae blanditiis, iste alias praesentium repellendus nesciunt nostrum quo laboriosam ratione.
+                <input type="email" name="usuario" placeholder="Digite seu E-mail">
+                <input type="password" name="senha" placehodler="Digite sua Senha">
             </form>
         </div>
     </div>
