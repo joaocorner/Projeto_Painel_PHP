@@ -36,7 +36,7 @@ body {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4caf50;
+  background: #a72a2a;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -50,7 +50,7 @@ body {
 .form button:hover,
 .form button:active,
 .form button:focus {
-  background: #07720a;
+  background: #bd0e0ecb;
 }
 
 .imagem {
