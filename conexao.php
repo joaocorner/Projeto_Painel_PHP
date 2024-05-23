@@ -1,5 +1,9 @@
 <?php
 
+//definir fuso horário
+date_default_timezone_set('America/Sao_Paulo');
+
+// Conexão com o banco de dados
 $servidor = 'localhost';
 $banco = 'projeto';
 $usuario = 'root';
