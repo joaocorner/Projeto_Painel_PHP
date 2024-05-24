@@ -21,6 +21,7 @@ if ($linhas > 0) {
 	$senha_usuario = $res[0]['senha'];
 	$nivel_usuario = $res[0]['nivel'];
 	$foto_usuario = $res[0]['foto'];
+	$endereco_usuario = $res[0]['endereco'];
 }
 
 ?>
@@ -386,18 +387,23 @@ if ($linhas > 0) {
 
 					</div>
 
-
+					<div class="row">
+						<div class="col-md-12">
+							<label>Endereço</label>
+							<input type="text" class="form-control" id="endereco_perfil" name="enredeco" placeholder="Seu Endereço" value="<?php echo $endereco_usuario ?>">
+						</div>
+					</div>
 
 
 
 
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-9">
 							<label>Foto</label>
 							<input type="file" class="form-control" id="foto_perfil" name="foto" value="<?php echo $foto_usuario ?>" onchange="carregarImgPerfil()">
 						</div>
 
-						<div class="col-md-6">
+						<div class="col-md-3">
 							<img src="images/perfil/<?php echo $foto_usuario ?>" width="80px" id="target-usu">
 
 						</div>
