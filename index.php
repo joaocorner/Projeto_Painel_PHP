@@ -28,10 +28,10 @@ if ($linhas == 0) {
 <body>
     <div class='login'>
         <div class='form'>
-            <img src="img/logo.png" alt="" srcset="" class="imagem">
+            <img src="img/logo.png" alt="" srcset= "" class="imagem">
             <form method="post" action="autenticar.php">
-                <input type="email" name="usuario" placeholder="Digite seu E-mail">
-                <input type="password" name="senha" placeholder="Digite sua Senha">
+                <input type="email" name="usuario" placeholder="Digite seu E-mail" required>
+                <input type="password" name="senha" placeholder="Digite sua Senha" required>
                 <button type="submit">Login</button>
             </form>
         </div>
