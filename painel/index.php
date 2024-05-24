@@ -1,4 +1,5 @@
 <?php 
+@session_start();
 require_once("../conexao.php");
 require_once("verificar.php");
 
@@ -9,7 +10,18 @@ if(@$_GET['pagina'] != ""){
 	$pagina = 'home';
 }
 
-
+$id_usuario = @$_SESSION['id'];
+$query = $pdo->query("SELECT * FROM usuarios where id = '$id_usuario' ");
+$res = $query->fetchAll(PDO::FETCH_ASSOC);
+$linhas = count($res);
+if($linhas>0){
+	$nome_usuario = $res[0]['nome'];
+	$email_usuario = $res[0]['email'];
+	$telefone_usuario = $res[0]['telefone'];
+	$senha_usuario = $res[0]['senha'];
+	$nivel_usuario = $res[0]['nivel'];
+	$foto_usuario = $res[0]['foto'];
+}
 
 ?>
 <!DOCTYPE HTML>
@@ -215,10 +227,10 @@ if(@$_GET['pagina'] != ""){
 						<li class="dropdown profile_details_drop">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="images/perfil/sem-foto.jpg" alt="" width="50px" height="50px"> </span> 
+									<span class="prfil-img"><img src="images/perfil/<?php echo $foto_usuario?>" alt="" width="50px" height="50px"> </span> 
 									<div class="user-name esc">
-										<p>Nome Usuário</p>
-										<span>Nível Usuário</span>
+										<p><?php echo $nome_usuario ?></p>
+										<span><?php echo $nivel_usuario; ?></span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>

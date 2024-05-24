@@ -19,3 +19,4 @@ try {
 // variaveis globais
 $nome_sistema = "Nome Sistema";
 $email_sistema = "jcorner@usimeca.com.br";
+$telefone_sistema = "(21)96488-2206";
