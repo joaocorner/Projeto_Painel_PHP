@@ -360,30 +360,26 @@ if($linhas>0){
 
 
 					<div class="row">
-						<div class="col-md-6">							
+						<div class="col-md-4">							
 								<label>Telefone</label>
 								<input type="text" class="form-control" id="telefone_perfil" name="telefone" placeholder="Seu Telefone" value="<?php echo $telefone_usuario ?>" required>							
 						</div>
 
-						<div class="col-md-6">							
-								<label>CPF</label>
-								<input type="text" class="form-control" id="cpf_perfil" name="cpf" placeholder="Seu CPF" value="<?php echo $cpf_usuario ?>">							
-						</div>
-					</div>
-
-
-
-					<div class="row">
-						<div class="col-md-6">							
+						<div class="col-md-4">							
 								<label>Senha</label>
 								<input type="password" class="form-control" id="senha_perfil" name="senha" placeholder="Senha" value="<?php echo $senha_usuario ?>" required>							
 						</div>
 
-						<div class="col-md-6">							
+						<div class="col-md-4">							
 								<label>Confirmar Senha</label>
 								<input type="password" class="form-control" id="conf_senha_perfil" name="conf_senha" placeholder="Confirmar Senha" value="" required>							
 						</div>
+						
 					</div>
+
+
+
+
 
 
 					<div class="row">
