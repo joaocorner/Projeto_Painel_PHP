@@ -120,7 +120,7 @@ if ($linhas > 0) {
 	</script>
 	<!-- //pie-chart --><!-- index page sales reviews visitors pie chart -->
 
-	<link href="https://cdn.datatables.net/v/dt/dt-2.0.7/datatables.min.css" rel="stylesheet">
+	<link type='text/css' rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-2.0.7/datatables.min.css">
 
 	<script src="https://cdn.datatables.net/v/dt/dt-2.0.7/datatables.min.js"></script>
 
