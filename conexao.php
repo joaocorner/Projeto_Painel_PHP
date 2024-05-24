@@ -15,3 +15,7 @@ try {
     echo 'Erro ao conectar com ao banco de dados! <br>';
     echo $e;
 }
+
+// variaveis globais
+$nome_sistema = "Nome Sistema";
+$email_sistema = "jcorner@usimeca.com.br";
