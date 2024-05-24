@@ -6,7 +6,7 @@ $linhas = count($res);
 $senha = '123';
 $senha_crip = md5($senha);
 if ($linhas == 0) {
-    $pdo->query("INSERT INTO usuarios SET nome = '$nome_sistema', email = '$email_sistema', senha = '$senha',senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', foto = 'sem-foto.jpg', telefone = '$telefone_sistema'");
+    $pdo->query("INSERT INTO usuarios SET nome = '$nome_sistema', email = '$email_sistema', senha = '$senha',senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', foto = 'sem-foto.jpg', telefone = '$telefone_sistema', data = curDate()");
 }
 ?>
 
@@ -28,7 +28,7 @@ if ($linhas == 0) {
 <body>
     <div class='login'>
         <div class='form'>
-            <img src="img/logo.png" alt="" srcset= "" class="imagem">
+            <img src="img/logo.png" alt="" srcset="" class="imagem">
             <form method="post" action="autenticar.php">
                 <input type="email" name="usuario" placeholder="Digite seu E-mail" required>
                 <input type="password" name="senha" placeholder="Digite sua Senha" required>

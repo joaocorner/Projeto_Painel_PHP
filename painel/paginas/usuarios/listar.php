@@ -32,6 +32,9 @@ for ($i = 0; $i < $linhas; $i++) {
     $ativo = $res[$i]['ativo'];
     $foto = $res[$i]['foto'];
     $endereco = $res[$i]['endereco'];
+    $data = $res[$i]['data'];
+
+    $dataF = implode('/', array_reverse(explode('-', $data)));
 
     echo <<<HTML
 <tr>
@@ -42,4 +45,17 @@ for ($i = 0; $i < $linhas; $i++) {
 <td></td>
 </tr> 
 HTML;
+
 }
+
+echo <<<HTML
+</tbody>
+</table>
+HTML;
+?>
+
+<script type='text/javascript'>
+    $(document).ready(function() {
+        $('#tabela').DataTable();
+    });
+</script>
