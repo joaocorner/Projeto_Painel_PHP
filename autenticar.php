@@ -15,6 +15,11 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $linhas = count($res);
 
 if ($linhas > 0) {
+    if ($res[0]['ativo'] != 'Sim') {
+        echo '<script>window.alert("Acesso desativado!")</script>';
+        echo '<script>window.location="index.php"</script>';
+    }
+    
     $_SESSION['nome'] = $res[0]['nome'];
     $_SESSION['id'] = $res[0]['id'];
     $_SESSION['nivel'] = $res[0]['nivel'];
