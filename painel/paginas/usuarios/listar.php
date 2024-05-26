@@ -48,6 +48,10 @@ for ($i = 0; $i < $linhas; $i++) {
         $classe_ativo = '#c4c4c4';
     }
 
+    if ($nivel == 'Administrador') {
+        $senha = '********';
+    }
+
 
     echo <<<HTML
 <tr style="color:{$classe_ativo}">
