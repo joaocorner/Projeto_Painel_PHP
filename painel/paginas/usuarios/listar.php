@@ -86,6 +86,7 @@ HTML;
 
 echo <<<HTML
 </tbody>
+<small><div align="center" id="mensagem-excluir"></div></small>
 </table>
 HTML;
 ?>
