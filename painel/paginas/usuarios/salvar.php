@@ -9,15 +9,27 @@ $nivel = $_POST['nivel'];
 $endereco = $_POST['endereco'];
 $senha = '123';
 $senha_crip = md5($senha);
+$id = $_POST['id'];
 
-$query = $pdo->query("SELECT * FROM usuarios where email = '$email'");
+//verificar se email já existe
+$query = $pdo->query("SELECT * FROM $tabela where email = '$email'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
-if (    @count($res) > 0) {
+$id_reg = @$res[0]['id'];
+if (@count($res) > 0 and $id != $id_reg) {
     echo 'Email já Cadastrado';
     exit();
 }
 
-$query = $pdo->prepare("INSERT INTO usuarios SET nome = :nome, email = :email, telefone = :telefone, nivel = '$nivel', endereco = :endereco, senha = '$senha', senha_crip = '$senha_crip', ativo = 'Sim', data = curDate(), foto = 'sem-foto.jpg'");
+//verificar se telefone já existe
+$query = $pdo->query("SELECT * FROM $tabela where telefone = '$telefone'");
+$res = $query->fetchAll(PDO::FETCH_ASSOC);
+$id_reg = @$res[0]['id'];
+if (@count($res) > 0 and $id != $id_reg) {
+    echo 'Telefone já Cadastrado';
+    exit();
+}
+
+$query = $pdo->prepare("INSERT INTO $tabela SET nome = :nome, email = :email, telefone = :telefone, nivel = '$nivel', endereco = :endereco, senha = '$senha', senha_crip = '$senha_crip', ativo = 'Sim', data = curDate(), foto = 'sem-foto.jpg'");
 $query->bindValue(':nome', $nome);
 $query->bindValue(':email', $email);
 $query->bindValue(':telefone', $telefone);
