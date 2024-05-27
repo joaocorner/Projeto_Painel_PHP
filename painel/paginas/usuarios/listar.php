@@ -102,3 +102,28 @@ HTML;
         });
     });
 </script>
+
+<script type='text/javascript'>
+    function editar(id, nome, email, telefone, endereco, nivel) {
+        $('#mensagem').html('');
+        $('#titulo_inserir').html('Editar Usuário');
+
+        $('#id').val(id);
+        $('#nome').val(nome);
+        $('#email').val(email);
+        $('#telefone').val(telefone);
+        $('#endereco').val(endereco);
+        $('#nivel').val(nivel).change();
+
+        $('#modalForm').modal('show');
+    }
+
+    function limparCampos() {
+        $('#id').val('');
+        $('#nome').val('');
+        $('#email').val('');
+        $('#telefone').val('');
+        $('#endereco').val('');
+        $('#nivel').val('Administrador').change();
+    }
+</script>

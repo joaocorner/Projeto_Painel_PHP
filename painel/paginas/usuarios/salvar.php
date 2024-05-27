@@ -29,7 +29,11 @@ if (@count($res) > 0 and $id != $id_reg) {
     exit();
 }
 
-$query = $pdo->prepare("INSERT INTO $tabela SET nome = :nome, email = :email, telefone = :telefone, nivel = '$nivel', endereco = :endereco, senha = '$senha', senha_crip = '$senha_crip', ativo = 'Sim', data = curDate(), foto = 'sem-foto.jpg'");
+if ($id == '') {
+    $query = $pdo->prepare("INSERT INTO $tabela SET nome = :nome, email = :email, telefone = :telefone, nivel = '$nivel', endereco = :endereco, senha = '$senha', senha_crip = '$senha_crip', ativo = 'Sim', data = curDate(), foto = 'sem-foto.jpg'");
+} else {
+    $query = $pdo->prepare("UPDATE $tabela SET nome = :nome, email = :email, telefone = :telefone, nivel = '$nivel', endereco = :endereco WHERE id = '$id'");
+}
 $query->bindValue(':nome', $nome);
 $query->bindValue(':email', $email);
 $query->bindValue(':telefone', $telefone);
