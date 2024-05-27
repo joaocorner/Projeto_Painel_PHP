@@ -81,6 +81,7 @@ $pag = 'usuarios';
                         </div>
                     </div>
 
+                    <input type="hidden" class="form-control" id="id" name="id">
                     
                     <br>
                     <small>
