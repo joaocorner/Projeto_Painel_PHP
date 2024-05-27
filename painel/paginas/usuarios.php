@@ -8,12 +8,6 @@ $pag = 'usuarios';
 
 </div>
 
-<!-- chamada em ajax para não precisar repetir o código em todas as páginas -->
-<script type='text/javascript'>
-    var pag = '<?= $pag ?>' /* passando variavel de php para javascript */
-</script>
-<script src='js/ajax.js'></script>
-
 <script type='text/javascript'>
     $(document).ready(function() {
         $('#tabela').DataTable({
@@ -37,7 +31,6 @@ $pag = 'usuarios';
             <form id="form">
                 <div class="modal-body">
 
-
                     <div class="row">
                         <div class="col-md-6">
                             <label>Nome</label>
@@ -49,9 +42,7 @@ $pag = 'usuarios';
                             <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
                         </div>
 
-
                     </div>
-
 
                     <div class="row">
 
@@ -68,8 +59,6 @@ $pag = 'usuarios';
                                 <option>Comum</option>
                             </select>
                         </div>
-
-
 
                     </div>
 
@@ -92,13 +81,7 @@ $pag = 'usuarios';
                         </div>
                     </div>
 
-
-
-
-
-
-                    <input type="hidden" class="form-control" id="id" name="id">
-
+                    
                     <br>
                     <small>
                         <div id="mensagem" align="center"></div>
@@ -111,6 +94,11 @@ $pag = 'usuarios';
         </div>
     </div>
 </div>
+
+<script type='text/javascript'>
+    var pag = '<?= $pag ?>'
+</script>
+<script src='js/ajax.js'></script>
 
 <script type="text/javascript">
 	function carregarImg() {
