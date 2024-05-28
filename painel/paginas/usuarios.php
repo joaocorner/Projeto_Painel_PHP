@@ -126,13 +126,18 @@ $pag = 'usuarios';
                         <span><b>Data Cadastro: </b></span><span id="data_cad_dados"></span>
                     </div>
 
+
                     <div class="col-md-12" style="margin-bottom: 5px">
                         <span><b>Endereço: </b></span><span id="endereco_dados"></span>
                     </div>
+
+                    <div class="col-md-12" style="margin-bottom: 5px">
+                        <div align="center">
+                            <img src="" id="foto_dados" width="200px"><span id="endereco_dados"></span>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
