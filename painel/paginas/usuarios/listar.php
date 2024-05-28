@@ -76,7 +76,7 @@ for ($i = 0; $i < $linhas; $i++) {
 		</ul>
 </li>
 
-<big><a href="#" onclick="mostrar('{$nome}','{$email}','{$telefone}','{$endereco}','{$ativo}','{$dataF}', '{$senha}', '{$nivel}')" title="Mostrar Dados"><i class="fa fa-info-circle text-primary"></i></a></big>
+<big><a href="#" onclick="mostrar('{$nome}','{$email}','{$telefone}','{$endereco}','{$ativo}','{$dataF}', '{$senha}', '{$nivel}', '{$foto}')" title="Mostrar Dados"><i class="fa fa-info-circle text-primary"></i></a></big>
 
 
 <big><a href="#" onclick="ativar('{$id}', '{$acao}')" title="{$titulo_link}"><i class="fa {$icone} text-success"></i></a></big>
@@ -118,6 +118,21 @@ HTML;
         $('#nivel').val(nivel).change();
 
         $('#modalForm').modal('show');
+    }
+
+    function mostrar(nome, email, telefone, endereco, ativo, data, senha, nivel, foto) {
+
+        $('#titulo_dados').text(nome);
+        $('#email_dados').text(email);
+        $('#telefone_dados').text(telefone);
+        $('#endereco').text(endereco);
+        $('#ativo_dados').text(ativo);
+        $('#data_dados').text(data);
+        $('#senha_dados').text(senha);
+        $('#nivel_dados').text(nivel);
+        $('#foto_dados').text(foto);
+
+        $('#modalDados').modal('show');
     }
 
     function limparCampos() {
