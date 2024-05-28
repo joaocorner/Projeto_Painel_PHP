@@ -394,7 +394,7 @@ if ($linhas > 0) {
 					<div class="row">
 						<div class="col-md-12">
 							<label>Endereço</label>
-							<input type="text" class="form-control" id="endereco_perfil" name="enredeco" placeholder="Seu Endereço" value="<?php echo $endereco_usuario ?>">
+							<input type="text" class="form-control" id="endereco_perfil" name="endereco" placeholder="Seu Endereço" value="<?php echo $endereco_usuario ?>">
 						</div>
 					</div>
 
