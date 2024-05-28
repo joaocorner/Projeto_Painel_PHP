@@ -15,6 +15,7 @@ if ($linhas > 0) {
 	<th class="esc">Telefone</th>	
 	<th class="esc">Email</th>	
 	<th class="esc">Nível</th>	
+	<th class="esc">Foto</th>	
 	<th>Ações</th>
 	</tr> 
 	</thead> 
@@ -59,6 +60,7 @@ for ($i = 0; $i < $linhas; $i++) {
 <td class="esc">{$telefone}</td>
 <td class="esc">{$email}</td>
 <td class="esc">{$nivel}</td>
+<td class="esc"><img src="images/perfil/{$foto}" width='25px'></td>
 <td>
 
 <big><a href="#" onclick="editar('{$id}','{$nome}','{$email}','{$telefone}','{$endereco}','{$nivel}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
