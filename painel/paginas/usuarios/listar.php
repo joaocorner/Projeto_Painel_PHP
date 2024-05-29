@@ -145,6 +145,9 @@ HTML;
         $('#telefone').val('');
         $('#endereco').val('');
         $('#nivel').val('Administrador').change();
+
+        $('#ids').val('');
+        $('#btn-deletar').hide();
     }
 
     function selecionar(id) {
@@ -174,5 +177,7 @@ HTML;
         for (i = 0; i < id.length - 1; i++) {
             excluir(id[i]);
         }
+
+        limparCampos();
     }
 </script>
