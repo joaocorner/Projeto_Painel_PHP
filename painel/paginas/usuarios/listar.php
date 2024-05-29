@@ -21,7 +21,6 @@ if ($linhas > 0) {
 	</thead> 
 	<tbody>	
 HTML;
-}
 
 for ($i = 0; $i < $linhas; $i++) {
     $id = $res[$i]['id'];
@@ -94,6 +93,11 @@ echo <<<HTML
 <small><div align="center" id="mensagem-excluir"></div></small>
 </table>
 HTML;
+
+} else {
+    echo '<small>Nenhum registro encontrado</small>';
+}
+
 ?>
 
 <script type="text/javascript">
