@@ -158,6 +158,26 @@ $pag = 'usuarios';
     </div>
 </div>
 
+
+<!-- Modal Permissões -->
+
+<div class="modal fade" id="modalPermissoes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel"><span id="nome_permissoes"></span></h4>
+                <button id="btn-fechar-permissoes" type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -25px">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">                
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type='text/javascript'>
     var pag = '<?= $pag ?>'
 </script>
