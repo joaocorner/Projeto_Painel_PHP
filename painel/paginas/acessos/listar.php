@@ -13,6 +13,7 @@ if ($linhas > 0) {
 	<tr> 
 	<th>Nome</th>	
 	<th>Grupo</th>	
+	<th></th>
 	<th>Ações</th>
 	</tr> 
 	</thead> 
@@ -27,7 +28,10 @@ HTML;
 
         $query2 = $pdo->query("SELECT * FROM grupo_acessos WHERE id = '$grupo'");
         $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-        $nome_grupo = @$res2[0]['nome'];
+        if(@count($res2) > 0){
+            $nome_grupo = @$res2[0]['nome'];
+        }else{
+            $nome_grupo = 'Sem Grupo';}
 
 
         echo <<<HTML
