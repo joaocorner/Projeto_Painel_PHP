@@ -36,7 +36,7 @@ $pag = 'acessos';
 
 <!-- Modal Perfil -->
 <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="exampleModalLabel"><span id="titulo_inserir"></span></h4>
@@ -48,12 +48,16 @@ $pag = 'acessos';
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <label>Nome</label>
                             <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Menu" required>
                         </div>
+                        <div class="col-md-3">
+                            <label>Chave</label>
+                            <input type="text" class="form-control" id="chave" name="chave" placeholder="Chave" required>
+                        </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <label>Grupo</label>
                             <select class="form-control" id="grupo" name="grupo" required>
                                 <option value="0">Sem Grupo</option>
@@ -71,7 +75,7 @@ $pag = 'acessos';
                             </select>
                         </div>
 
-                        <div class="col-md-2" style="margin-top: 22px">
+                        <div class="col-md-3" style="margin-top: 22px">
 
                             <button type="submit" class="btn btn-primary">Salvar</button>
 

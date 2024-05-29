@@ -12,32 +12,35 @@ if ($linhas > 0) {
 	<thead> 
 	<tr> 
 	<th>Nome</th>	
-	<th>Acessos</th>	
+	<th>Grupo</th>	
 	<th>Ações</th>
 	</tr> 
 	</thead> 
 	<tbody>	
 HTML;
 
-for ($i = 0; $i < $linhas; $i++) {
-    $id = $res[$i]['id'];
-    $nome = $res[$i]['nome'];
+    for ($i = 0; $i < $linhas; $i++) {
+        $id = $res[$i]['id'];
+        $nome = $res[$i]['nome'];
+        $grupo = $res[$i]['grupo'];
+        $chave = $res[$i]['chave'];
 
-    $query2 = $pdo->query("SELECT * FROM acessos WHERE grupo = '$id'");
-    $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-    $total_acessos = @count($res2);
+        $query2 = $pdo->query("SELECT * FROM grupo_acessos WHERE id = '$grupo'");
+        $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+        $nome_grupo = @$res2[0]['nome'];
 
 
-    echo <<<HTML
+        echo <<<HTML
     <tr>
     <td>
         <input type="checkbox" id="seletor-{$id}" class="form-check-input" onchange="selecionar('{$id}')">
         {$nome}
     </td>
-    <td class="esc">{$total_acessos}</td>
+    <td class="esc">{$chave}</td>
+    <td class="esc">{$nome_grupo}</td>
 
     <td>
-    <big><a href="#" onclick="editar('{$id}','{$nome}'" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
+    <big><a href="#" onclick="editar('{$id}','{$nome}','{$chave}','{$grupo}'" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
     <li class="dropdown head-dpdn2" style="display: inline-block;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><big><i class="fa fa-trash-o text-danger"></i></big></a>
 
@@ -54,14 +57,13 @@ for ($i = 0; $i < $linhas; $i++) {
     </td>
     </tr> 
 HTML;
-}
+    }
 
-echo <<<HTML
+    echo <<<HTML
 </tbody>
 <small><div align="center" id="mensagem-excluir"></div></small>
 </table>
 HTML;
-
 } else {
     echo '<small>Nenhum registro encontrado</small>';
 }
@@ -81,12 +83,14 @@ HTML;
 </script>
 
 <script type='text/javascript'>
-    function editar(id, nome) {
+    function editar(id, nome, chave, grupo) {
         $('#mensagem').html('');
         $('#titulo_inserir').html('Editar Usuário');
 
         $('#id').val(id);
         $('#nome').val(nome);
+        $('#chave').val(chave);
+        $('#grupo').val(grupo).change(); //change é para selecionar em seletor
 
         $('#modalForm').modal('show');
     }
@@ -95,6 +99,8 @@ HTML;
     function limparCampos() {
         $('#id').val('');
         $('#nome').val('');
+        $('#chave').val('');
+        $('#grupo').val('0').change;
 
         $('#ids').val('');
         $('#btn-deletar').hide();
