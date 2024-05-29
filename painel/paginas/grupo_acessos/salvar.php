@@ -6,7 +6,7 @@ $nome = $_POST['nome'];
 $id = $_POST['id'];
 
 //Validação de nome
-$query = $pdo->query("SELECT * FROM $tabela where nome = '$email'");
+$query = $pdo->query("SELECT * FROM $tabela where nome = '$nome'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $id_reg = @$res[0]['id'];
 if (@count($res) > 0 and $id != $id_reg) {

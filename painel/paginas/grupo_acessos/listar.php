@@ -37,7 +37,7 @@ for ($i = 0; $i < $linhas; $i++) {
     <td class="esc">{$total_acessos}</td>
 
     <td>
-    <big><a href="#" onclick="editar('{$id}','{$nome}'" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
+    <big><a href="#" onclick="editar('{$id}','{$nome}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
     <li class="dropdown head-dpdn2" style="display: inline-block;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><big><i class="fa fa-trash-o text-danger"></i></big></a>
 
