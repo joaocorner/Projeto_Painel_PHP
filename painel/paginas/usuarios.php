@@ -4,6 +4,9 @@ $pag = 'usuarios';
 <a onclick="inserir()" type="button" class="btn btn-primary">
     <span class="fa fa-plus"></span> Usuário</a>
 
+<a onclick="inserir()" type="button" class="btn btn-danger">
+    <span class="fa fa-trash"></span> Deletar</a>
+
 <div class="bs-example widget-shadow" style="padding:15px" id="listar">
 
 </div>
