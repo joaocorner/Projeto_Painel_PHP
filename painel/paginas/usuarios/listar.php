@@ -56,7 +56,10 @@ for ($i = 0; $i < $linhas; $i++) {
 
     echo <<<HTML
 <tr style="color:{$classe_ativo}">
-<td>{$nome}</td>
+<td>
+    <input type="checkbox" id="seletor-{$id}" class="form-check-input" onchange="selecionar('{$id}')">
+    {$nome}
+</td>
 <td class="esc">{$telefone}</td>
 <td class="esc">{$email}</td>
 <td class="esc">{$nivel}</td>
@@ -142,5 +145,17 @@ HTML;
         $('#telefone').val('');
         $('#endereco').val('');
         $('#nivel').val('Administrador').change();
+    }
+
+    function selecionar(id) {
+
+        var ids = $('#ids').val();
+        if ($('#seletor-' + id).is(":checked") == true) {
+            var novo_id = ids + id + '-';
+            $('#ids').val(novo_id);
+        } else {
+            var retirar = ids.replace(id + '-', '');
+            $('#ids').val(retirar);
+        }
     }
 </script>
