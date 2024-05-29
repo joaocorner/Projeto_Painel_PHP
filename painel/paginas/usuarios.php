@@ -4,8 +4,19 @@ $pag = 'usuarios';
 <a onclick="inserir()" type="button" class="btn btn-primary">
     <span class="fa fa-plus"></span> Usuário</a>
 
-<a onclick="inserir()" type="button" class="btn btn-danger">
-    <span class="fa fa-trash"></span> Deletar</a>
+
+
+<li class="dropdown head-dpdn2" style="display: inline-block;">
+    <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">
+        <span class="fa fa-trash"></span> Deletar</a>
+    <ul class="dropdown-menu">
+        <li>
+            <div class="notification_desc2">
+                <p>Excluir selecionados? <a href="#" onclick="excluirSel()"><span class="text-danger">Sim</span></a></p>
+            </div>
+        </li>
+    </ul>
+</li>
 
 <div class="bs-example widget-shadow" style="padding:15px" id="listar">
 
