@@ -48,12 +48,12 @@ $pag = 'acessos';
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <label>Nome</label>
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome" required>
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Menu" required>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <label>Grupo</label>
                             <select class="form-control" id="grupo" name="grupo" required>
                                 <option value="0">Sem Grupo</option>
@@ -62,14 +62,16 @@ $pag = 'acessos';
                                 $res = $query->fetchAll(PDO::FETCH_ASSOC);
                                 $linhas = @count($res);
                                 if ($linhas > 0) {
+                                    for ($i = 0; $i < $linhas; $i++) {
                                 ?>
-                                    <option>Administrador</option>
-                                    <option>Comum</option>
-                                <?php   }  ?>
+                                        <option value="<?php echo $res[$i]['id'] ?>"><?php echo  $res[$i]['nome'] ?></option>
+
+                                <?php   }
+                                } ?>
                             </select>
                         </div>
 
-                        <div class="col-md-4" style="margin-top: 22px">
+                        <div class="col-md-2" style="margin-top: 22px">
 
                             <button type="submit" class="btn btn-primary">Salvar</button>
 
