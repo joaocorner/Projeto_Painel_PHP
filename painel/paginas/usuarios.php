@@ -7,7 +7,7 @@ $pag = 'usuarios';
 
 
 <li class="dropdown head-dpdn2" style="display: inline-block;">
-    <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">
+    <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle" id="btn-deletar" style="display: none">
         <span class="fa fa-trash"></span> Deletar</a>
     <ul class="dropdown-menu">
         <li>
@@ -32,7 +32,7 @@ $pag = 'usuarios';
     });
 </script>
 
-<input type="text" id="ids">
+<input type="hidden" id="ids">
 
 <!-- Modal Perfil -->
 <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
