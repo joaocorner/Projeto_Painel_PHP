@@ -159,11 +159,20 @@ HTML;
         }
 
         var ids_final = $('#ids').val();
-        
+
         if (ids_final == '') {
             $('#btn-deletar').hide();
         } else {
             $('#btn-deletar').show();
+        }
+    }
+
+    function excluirSel() {
+        var ids = $('#ids').val();
+        var id = ids.split('-');
+
+        for (i = 0; i < id.length - 1; i++) {
+            excluir(id[i]);
         }
     }
 </script>
