@@ -165,13 +165,26 @@ $pag = 'usuarios';
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel"><span id="nome_permissoes"></span></h4>
+                <h4 class="modal-title" id="exampleModalLabel"><span id="nome_permissoes"></span>
+                    <span style="position:absolute; right:35px">
+                        <input class="form-check-input" type="checkbox" id="input-todos" onchange="marcarTodos()">
+                        <label class="">Marcar Todos</label>
+                    </span>
+
+                </h4>
                 <button id="btn-fechar-permissoes" type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -25px">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
-            <div class="modal-body">                
+            <div class="modal-body">
+                <div id="listar_permissoes">
+                </div>
+                <br>
+                <input type="hidden" name="id" id="id_permissoes">
+                <small>
+                    <div id="mensagem_permissao" align="center" class="mt-3"></div>
+                </small>
             </div>
         </div>
     </div>

@@ -22,40 +22,40 @@ if ($linhas > 0) {
 	<tbody>	
 HTML;
 
-for ($i = 0; $i < $linhas; $i++) {
-    $id = $res[$i]['id'];
-    $nome = $res[$i]['nome'];
-    $telefone = $res[$i]['telefone'];
-    $email = $res[$i]['email'];
-    $nivel = $res[$i]['nivel'];
-    $senha = $res[$i]['senha'];
-    $ativo = $res[$i]['ativo'];
-    $foto = $res[$i]['foto'];
-    $endereco = $res[$i]['endereco'];
-    $data = $res[$i]['data'];
+    for ($i = 0; $i < $linhas; $i++) {
+        $id = $res[$i]['id'];
+        $nome = $res[$i]['nome'];
+        $telefone = $res[$i]['telefone'];
+        $email = $res[$i]['email'];
+        $nivel = $res[$i]['nivel'];
+        $senha = $res[$i]['senha'];
+        $ativo = $res[$i]['ativo'];
+        $foto = $res[$i]['foto'];
+        $endereco = $res[$i]['endereco'];
+        $data = $res[$i]['data'];
 
-    $dataF = implode('/', array_reverse(explode('-', $data)));
+        $dataF = implode('/', array_reverse(explode('-', $data)));
 
-    if ($ativo == 'Sim') {
-        $icone = 'fa-check-square';
-        $titulo_link = 'Desativar Item';
-        $acao = 'Não';
-        $classe_ativo = '';
-    } else {
-        $icone = 'fa-square-o';
-        $titulo_link = 'Ativar Usuário';
-        $acao = 'Sim';
-        $classe_ativo = '#c4c4c4';
-    }
+        if ($ativo == 'Sim') {
+            $icone = 'fa-check-square';
+            $titulo_link = 'Desativar Item';
+            $acao = 'Não';
+            $classe_ativo = '';
+        } else {
+            $icone = 'fa-square-o';
+            $titulo_link = 'Ativar Usuário';
+            $acao = 'Sim';
+            $classe_ativo = '#c4c4c4';
+        }
 
-    $mostrar_adm = '';
-    if ($nivel == 'Administrador') {
-        $senha = '********';
-        $mostrar_adm = 'ocultar';
-    }
+        $mostrar_adm = '';
+        if ($nivel == 'Administrador') {
+            $senha = '********';
+            $mostrar_adm = 'ocultar';
+        }
 
 
-    echo <<<HTML
+        echo <<<HTML
 <tr style="color:{$classe_ativo}">
 <td>
     <input type="checkbox" id="seletor-{$id}" class="form-check-input" onchange="selecionar('{$id}')">
@@ -90,14 +90,13 @@ for ($i = 0; $i < $linhas; $i++) {
 </td>
 </tr> 
 HTML;
-}
+    }
 
-echo <<<HTML
+    echo <<<HTML
 </tbody>
 <small><div align="center" id="mensagem-excluir"></div></small>
 </table>
 HTML;
-
 } else {
     echo '<small>Nenhum registro encontrado</small>';
 }
@@ -194,6 +193,22 @@ HTML;
         $('#nome_permissoes').text(nome);
 
         $('#modalPermissoes').modal('show');
-        }
+        listarPermissoes(id);
+    }
 
+    function listarPermissoes(id) {
+        $.ajax({
+            url: 'paginas/' + pag + '/listar_permissoes.php',
+            type: 'POST',
+            data: {
+                id
+            },
+            dataType: 'html',
+
+            success: function(result) {
+                $('#listar_permissoes').html(result);
+                $('#mensagem_permissao').text('');
+            }
+        });
+    }
 </script>
