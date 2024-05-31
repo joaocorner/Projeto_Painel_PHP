@@ -54,16 +54,21 @@ $pag_inicial = '';
 if ($home != 'ocultar') {
     $pag_inicial = 'home';
 } else {
-    $query = $pdo->query("SELECT * FROM usuarios_permissoes where usuario = '$id_usuario' order by id desc limit 1");
+    $query = $pdo->query("SELECT * FROM usuarios_permissoes where usuario = '$id_usuario'");
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
     $total_reg = @count($res);
     if ($total_reg > 0) {
-        $permissao = $res[0]['permissao'];
-        $query2 = $pdo->query("SELECT * FROM acessos where id = '$permissao'");
-        $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-        $pag_inicial = $res2[0]['chave'];
-
-
+        for ($i = 0; $i < $total_reg; $i++) {
+            $permissao = $res[$i]['permissao'];
+            $query2 = $pdo->query("SELECT * FROM acessos where id = '$permissao'");
+            $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+            if ($res2[0]['pagina'] == "Não") {
+                continue;
+            } else {
+                $pag_inicial = $res2[0]['chave'];
+                break;
+            }
+        }
     } else {
         echo 'Você não tem permissão para acessar nenhuma página, acione o administrador!';
         exit();
@@ -71,15 +76,14 @@ if ($home != 'ocultar') {
 }
 
 
-if($usuarios == 'ocultar'){
-	$menu_pessoas = 'ocultar';
-}else{
-	$menu_pessoas = '';
+if ($usuarios == 'ocultar') {
+    $menu_pessoas = 'ocultar';
+} else {
+    $menu_pessoas = '';
 }
 
-if($grupo_acessos == 'ocultar' and $acessos == 'ocultar'){
-	$menu_cadastros = 'ocultar';
-}else{
-	$menu_cadastros = '';
+if ($grupo_acessos == 'ocultar' and $acessos == 'ocultar') {
+    $menu_cadastros = 'ocultar';
+} else {
+    $menu_cadastros = '';
 }
-

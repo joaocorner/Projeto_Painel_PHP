@@ -25,13 +25,15 @@ HTML;
         $nome = $res[$i]['nome'];
         $grupo = $res[$i]['grupo'];
         $chave = $res[$i]['chave'];
+        $pagina = $res[$i]['pagina'];
 
         $query2 = $pdo->query("SELECT * FROM grupo_acessos WHERE id = '$grupo'");
         $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-        if(@count($res2) > 0){
+        if (@count($res2) > 0) {
             $nome_grupo = @$res2[0]['nome'];
-        }else{
-            $nome_grupo = 'Sem Grupo';}
+        } else {
+            $nome_grupo = 'Sem Grupo';
+        }
 
 
         echo <<<HTML
@@ -44,7 +46,7 @@ HTML;
     <td class="esc">{$nome_grupo}</td>
 
     <td>
-    <big><a href="#" onclick="editar('{$id}','{$nome}','{$chave}','{$grupo}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
+    <big><a href="#" onclick="editar('{$id}','{$nome}','{$chave}','{$grupo}','{$pagina}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
     <li class="dropdown head-dpdn2" style="display: inline-block;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><big><i class="fa fa-trash-o text-danger"></i></big></a>
 
@@ -87,7 +89,7 @@ HTML;
 </script>
 
 <script type='text/javascript'>
-    function editar(id, nome, chave, grupo) {
+    function editar(id, nome, chave, grupo, pagina) {
         $('#mensagem').html('');
         $('#titulo_inserir').html('Editar Usuário');
 
@@ -95,6 +97,7 @@ HTML;
         $('#nome').val(nome);
         $('#chave').val(chave);
         $('#grupo').val(grupo).change(); //change é para selecionar em seletor
+        $('#pagina').val(pagina).change();
 
         $('#modalForm').modal('show');
     }

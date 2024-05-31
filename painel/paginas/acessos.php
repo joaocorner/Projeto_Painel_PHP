@@ -2,8 +2,8 @@
 $pag = 'acessos';
 
 if (@$acessos == 'ocultar') {
-   echo "<script>window.location='../index.php'</script>";
-   exit();
+    echo "<script>window.location='../index.php'</script>";
+    exit();
 }
 
 ?>
@@ -42,7 +42,7 @@ if (@$acessos == 'ocultar') {
 
 <!-- Modal Perfil -->
 <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg" style="width: 80%">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="exampleModalLabel"><span id="titulo_inserir"></span></h4>
@@ -63,7 +63,7 @@ if (@$acessos == 'ocultar') {
                             <input type="text" class="form-control" id="chave" name="chave" placeholder="Chave" required>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label>Grupo</label>
                             <select class="form-control" id="grupo" name="grupo" required>
                                 <option value="0">Sem Grupo</option>
@@ -81,7 +81,17 @@ if (@$acessos == 'ocultar') {
                             </select>
                         </div>
 
-                        <div class="col-md-3" style="margin-top: 22px">
+                        <div class="col-md-2">
+
+                            <label>Página</label>
+                            <select class="form-control" id="pagina" name="pagina" required>
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-1" style="margin-top: 22px">
 
                             <button type="submit" class="btn btn-primary">Salvar</button>
 
