@@ -13,4 +13,5 @@ if($foto != "sem-foto.jpg"){
 }
 
 $query = $pdo->query("DELETE FROM $tabela WHERE id = '$id'");
+$query = $pdo->query("DELETE FROM usuarios_permissoes WHERE usuario = '$id'");
 echo 'Excluído com Sucesso';
