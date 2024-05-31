@@ -195,3 +195,22 @@ $pag = 'usuarios';
     var pag = '<?= $pag ?>'
 </script>
 <script src='js/ajax.js'></script>
+
+<script type="text/javascript">
+    
+    function adicionarPermissao(id, usuario) {
+        $.ajax({
+            url: 'paginas/' + pag + '/add_permissao.php',
+            type: 'POST',
+            data: {
+                id,
+                usuario
+            },
+            dataType: 'html',
+
+            success: function(result) {
+                listarPermissoes(usuario);
+            }
+        });
+    }
+</script>
