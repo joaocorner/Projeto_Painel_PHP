@@ -1,5 +1,11 @@
 <?php
 $pag = 'usuarios';
+
+if (@$usuarios == 'ocultar') {
+    echo "<script>window.location='../index.php'</script>";
+    exit();
+ }
+
 ?>
 <a onclick="inserir()" type="button" class="btn btn-primary">
     <span class="fa fa-plus"></span> Usuário</a>
