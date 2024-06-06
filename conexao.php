@@ -17,8 +17,8 @@ try {
 }
 
 // variaveis globais
-$nome_sistema = "Nome Sistema";
-$email_sistema = "jcorner@usimeca.com.br";
+$nome_sistema = "Nome do Sistema";
+$email_sistema = "jcornerusi@gmail.com.br";
 $telefone_sistema = "(21)96488-2206";
 
 $query = $pdo->query("SELECT * FROM config");
