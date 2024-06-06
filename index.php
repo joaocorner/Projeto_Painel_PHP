@@ -30,8 +30,8 @@ if ($linhas == 0) {
         <div class='form'>
             <img src="img/logo.png" alt="" srcset="" class="imagem">
             <form method="post" action="autenticar.php">
-                <input type="email" name="usuario" placeholder="Digite seu E-mail" required>
-                <input type="password" name="senha" placeholder="Digite sua Senha" required>
+                <input type="email" name="usuario" placeholder="Digite seu E-mail" value='jcornerusi@gmail.com' required>
+                <input type="password" name="senha" placeholder="Digite sua Senha" value='123' required>
                 <button type="submit">Login</button>
             </form>
         </div>
